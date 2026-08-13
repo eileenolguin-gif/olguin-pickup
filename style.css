@@ -320,12 +320,6 @@ a {
   text-align: center;
 }
 
-.contact__payment {
-  margin-top: 18px;
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-}
-
 .contact__extra {
   margin-top: 40px;
   color: var(--color-text-light);
