@@ -209,6 +209,11 @@ a {
   margin-bottom: 0;
 }
 
+.section__coverage {
+  margin-top: 16px;
+  font-size: 0.92rem;
+}
+
 /* ---------- Grid de servicios ---------- */
 
 .grid {
