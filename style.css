@@ -1,0 +1,339 @@
+/* =========================================================
+   Olguín Pickup — Hoja de estilos
+   Paleta: azul noche (base) + terracota (acento)
+   REEMPLAZAR: si cambian los colores de marca, ajusta las
+   variables de --color en :root.
+   ========================================================= */
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f1ec;
+  --color-dark: #1c2430;      /* azul noche / carbón */
+  --color-dark-2: #131922;
+  --color-text: #1c2430;
+  --color-text-light: #6b7280;
+  --color-text-inverse: #f4f1ec;
+  --color-accent: #c1652f;    /* terracota */
+  --color-accent-dark: #a2521f;
+  --color-border: #e3ddd1;
+
+  --font-base: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --max-width: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--narrow {
+  max-width: 760px;
+  text-align: center;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn--whatsapp {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--whatsapp:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(193, 101, 47, 0.35);
+}
+
+.btn--large {
+  padding: 16px 32px;
+  font-size: 1.05rem;
+  margin-top: 8px;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.navbar__brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--color-dark);
+}
+
+.navbar__links {
+  display: none;
+  gap: 28px;
+}
+
+.navbar__links a {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+}
+
+.navbar__links a:hover {
+  color: var(--color-dark);
+}
+
+.navbar__cta {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+}
+
+@media (min-width: 768px) {
+  .navbar__links {
+    display: flex;
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-dark-2) 100%);
+  color: var(--color-text-inverse);
+  padding: 110px 0 90px;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.hero__subtitle {
+  max-width: 560px;
+  margin: 0 auto 34px;
+  font-size: 1.05rem;
+  color: #cfd3da;
+}
+
+/* ---------- Secciones genéricas ---------- */
+
+.section {
+  padding: 80px 0;
+}
+
+.section--alt {
+  background: var(--color-bg-alt);
+}
+
+.section--dark {
+  background: var(--color-dark);
+  color: var(--color-text-inverse);
+}
+
+.section__title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section__lead {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 48px;
+  color: var(--color-text-light);
+  font-size: 1.02rem;
+}
+
+.section__lead--light {
+  color: #cfd3da;
+  margin-bottom: 0;
+}
+
+/* ---------- Grid de servicios ---------- */
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid--services {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid--services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid--services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(28, 36, 48, 0.08);
+}
+
+.card__icon {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card__text {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+}
+
+/* ---------- Por qué elegirnos ---------- */
+
+.grid--reasons {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .grid--reasons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid--reasons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.reason__icon {
+  font-size: 1.7rem;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.reason__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.reason__text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+/* ---------- Contacto ---------- */
+
+.contact {
+  text-align: center;
+}
+
+.contact__extra {
+  margin-top: 40px;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+.contact__extra p {
+  margin-bottom: 6px;
+}
+
+.contact__extra a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  background: var(--color-dark-2);
+  color: #9aa0ab;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer__brand {
+  color: var(--color-text-inverse);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.footer__meta {
+  margin-top: 2px;
+}
