@@ -300,12 +300,12 @@ a {
 
 /* ---------- Fotos de fondo (decorativas, translúcidas) ---------- */
 
-.fleet-bg {
+.bg-photos {
   display: flex;
   height: 180px;
 }
 
-.fleet-bg__img {
+.bg-photos__img {
   flex: 1;
   width: 50%;
   height: 100%;
