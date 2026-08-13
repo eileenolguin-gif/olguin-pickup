@@ -298,6 +298,57 @@ a {
   color: var(--color-text-light);
 }
 
+/* ---------- Nuestra Flota ---------- */
+
+.grid--fleet {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid--fleet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid--fleet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.fleet-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 24px 24px 28px;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fleet-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(28, 36, 48, 0.08);
+}
+
+.fleet-card__img {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.fleet-card__title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.fleet-card__text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
 /* ---------- Contacto ---------- */
 
 .contact {
