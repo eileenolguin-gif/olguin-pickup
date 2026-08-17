@@ -26,6 +26,11 @@
   --accent-hover: #143a31;
   --accent-tint: #edf3f0;
 
+  /* Arena: calidez en dosis muy chicas (~5% de la superficie).
+     Solo punto de origen del trayecto, subrayados y detalles.
+     Ver MARCA.md §4. */
+  --accent-warm: #c9a66b;
+
   /* Fondos oscuros */
   --dark: #101614;
   --dark-2: #080c0b;
@@ -195,15 +200,17 @@ section[id] {
 }
 
 /* Enlace de texto con subrayado fino (estilo Apple) */
+/* Subrayado en arena: otra de las dosis de calidez (MARCA.md §4) */
 .link {
   color: var(--accent);
   font-weight: 500;
-  border-bottom: 1px solid rgba(30, 82, 69, 0.28);
+  border-bottom: 1px solid var(--accent-warm);
   padding-bottom: 1px;
-  transition: border-color 0.2s var(--ease);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .link:hover {
+  color: var(--accent-hover);
   border-bottom-color: var(--accent);
 }
 
@@ -261,12 +268,43 @@ section[id] {
   height: var(--nav-h);
 }
 
-.navbar__brand {
+/* ---------- Sistema de marca (ver MARCA.md) ---------- */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Versión sobre fondo oscuro: el trayecto y el pin pasan a blanco hueso,
+   el punto de origen se queda en arena. */
+.brand--light {
+  color: var(--on-dark);
+}
+
+.brand__pin {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand__word {
   font-size: 1.02rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--ink);
-  white-space: nowrap;
+}
+
+.brand--light .brand__word {
+  color: var(--on-dark);
+}
+
+/* Área de resguardo (MARCA.md §7): espacio libre alrededor del logo igual a
+   la altura del pin. */
+.navbar__brand {
+  padding-right: 20px;
 }
 
 .navbar__links {
@@ -438,8 +476,9 @@ section[id] {
   padding-bottom: 120px;
 }
 
+/* Arena: la dosis de calidez sobre el fondo oscuro (MARCA.md §4) */
 .hero__eyebrow {
-  color: rgba(242, 245, 243, 0.72);
+  color: var(--accent-warm);
 }
 
 .hero__title {
@@ -750,6 +789,45 @@ section[id] {
   letter-spacing: -0.01em;
 }
 
+/* ---------- Separador de trayecto ---------- */
+/* Recurso gráfico de marca: reusa el punteado del logo como separador
+   entre secciones (MARCA.md §3). */
+
+.trail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  padding: clamp(24px, 4vw, 44px) 0;
+}
+
+.trail__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  flex-shrink: 0;
+}
+
+.trail__line {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    var(--accent) 1px,
+    transparent 1.2px
+  );
+  background-size: 8px 2px;
+  background-repeat: repeat-x;
+}
+
+.trail__pin {
+  width: auto;
+  height: 22px;
+  flex-shrink: 0;
+}
+
 /* ---------- Contacto ---------- */
 
 .contact {
@@ -800,11 +878,7 @@ section[id] {
 }
 
 .footer__brand {
-  color: var(--on-dark);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .footer__meta {

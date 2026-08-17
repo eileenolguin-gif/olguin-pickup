@@ -17,24 +17,35 @@
   <title>Olguín Pickup | Transporte privado familiar</title>
   <meta name="description" content="Olguín Pickup — Transporte privado para turistas, personas, mascotas, equipos y mini mudanzas. Agencia familiar chilena, atención directa y de confianza.">
 
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#1e5245">
 
-  <!-- REEMPLAZAR: cuando tengas el logo, agrega aquí un favicon -->
-  <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+  <!-- Isotipo: el pin solo, que es la versión que sobrevive a 32 px (MARCA.md §4) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- PENDIENTE: falta producir favicon.png (32 px) y apple-touch-icon.png (180 px)
+       para Safari/iOS, que no leen favicons SVG. Ver MARCA.md §5. -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
   <!-- El ?v= obliga al navegador a bajar el archivo nuevo en vez de usar el
        que tiene guardado. SUBIR EL NUMERO cada vez que se edite style.css. -->
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
   <!-- ===================== NAV ===================== -->
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="#hero" class="navbar__brand">Olguín Pickup</a>
+      <!-- Isotipo + wordmark. La navbar es un contexto chico: a este tamaño el
+           trayecto punteado cae bajo 1 px por punto y se ensucia, así que el
+           sistema usa el pin solo (MARCA.md §2). El trayecto completo vive en
+           el separador entre secciones, donde sí se lee. -->
+      <a href="#hero" class="navbar__brand brand" aria-label="Olguín Pickup — ir al inicio">
+        <svg class="brand__pin" viewBox="87.6 4.5 18.8 24.5" aria-hidden="true">
+          <path fill-rule="evenodd" fill="currentColor" d="M97 4.5c-5.2 0-9.4 4.2-9.4 9.4 0 7 9.4 15.1 9.4 15.1s9.4-8.1 9.4-15.1c0-5.2-4.2-9.4-9.4-9.4zm0 5.7a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z"/>
+        </svg>
+        <span class="brand__word">Olguín Pickup</span>
+      </a>
       <nav class="navbar__links">
         <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
         <a href="#por-que" data-i18n="nav.porque">Por qué elegirnos</a>
@@ -286,8 +297,21 @@
     </div>
   </section>
 
+  <!-- ===================== SEPARADOR DE TRAYECTO ===================== -->
+  <!-- Recurso gráfico de marca (MARCA.md §3 y §8.4): el trayecto cruza la
+       página y desemboca en el CTA final. -->
+  <div class="container">
+    <div class="trail" aria-hidden="true">
+      <span class="trail__dot"></span>
+      <span class="trail__line"></span>
+      <svg class="trail__pin" viewBox="87.6 4.5 18.8 24.5">
+        <path fill-rule="evenodd" fill="currentColor" d="M97 4.5c-5.2 0-9.4 4.2-9.4 9.4 0 7 9.4 15.1 9.4 15.1s9.4-8.1 9.4-15.1c0-5.2-4.2-9.4-9.4-9.4zm0 5.7a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z"/>
+      </svg>
+    </div>
+  </div>
+
   <!-- ===================== CONTACTO ===================== -->
-  <section id="contacto" class="section section--alt">
+  <section id="contacto" class="section">
     <div class="container container--narrow contact">
       <p class="label" data-i18n="label.contacto">Contacto</p>
       <h2 class="section__title" data-i18n="contacto.title">Conversemos tu traslado</h2>
@@ -315,13 +339,20 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__brand">Olguín Pickup</p>
+      <!-- Versión sobre fondo oscuro: el punto de origen se queda en arena,
+           es el único color que no cambia entre versiones (MARCA.md §6). -->
+      <p class="footer__brand brand brand--light">
+        <svg class="brand__pin" viewBox="87.6 4.5 18.8 24.5" aria-hidden="true">
+          <path fill-rule="evenodd" fill="currentColor" d="M97 4.5c-5.2 0-9.4 4.2-9.4 9.4 0 7 9.4 15.1 9.4 15.1s9.4-8.1 9.4-15.1c0-5.2-4.2-9.4-9.4-9.4zm0 5.7a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z"/>
+        </svg>
+        <span class="brand__word">Olguín Pickup</span>
+      </p>
       <p class="footer__meta">© <span id="year"></span> Olguín Pickup — <span data-i18n="footer.tagline">Transporte privado familiar</span></p>
       <p class="footer__meta">WhatsApp: +56 9 7387 3915 · Correo: olguinpickup@gmail.com</p>
     </div>
   </footer>
 
   <!-- Mismo criterio que style.css: subir el ?v= al editar este archivo. -->
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
