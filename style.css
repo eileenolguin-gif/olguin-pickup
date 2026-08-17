@@ -200,8 +200,25 @@ a {
 }
 
 .navbar__cta {
-  padding: 8px 18px;
-  font-size: 0.85rem;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.navbar__cta:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.navbar__cta .btn__icon {
+  width: 20px;
+  height: 20px;
+  color: #25d366;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -213,13 +230,23 @@ a {
 /* ---------- Hero ---------- */
 
 .hero {
-  background-image: linear-gradient(180deg, rgba(28, 36, 48, 0.78) 0%, rgba(15, 19, 25, 0.88) 100%),
+  background-image: linear-gradient(180deg, rgba(28, 36, 48, 0.7) 0%, rgba(15, 19, 25, 0.82) 100%),
     url('images/hero-bg.png');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: var(--color-text-inverse);
-  padding: 140px 0 110px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    background-attachment: scroll;
+  }
 }
 
 .hero__eyebrow {
