@@ -1,2 +1,7 @@
 # Configuración local de Claude Code (contiene rutas y URLs firmadas: no publicar)
 .claude/settings.local.json
+
+# Material de exploración: mockups de Canva y fotos de banco descargadas
+# mientras se buscaba la dirección visual. No forma parte del sitio y el
+# repositorio es público, así que se queda solo en el computador.
+canva_preview/
