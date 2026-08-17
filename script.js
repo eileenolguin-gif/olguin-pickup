@@ -184,7 +184,7 @@ langButtons.forEach((btn) => {
 setLanguage(localStorage.getItem('op-lang') || 'es');
 
 // ---------- Aparición suave de secciones al hacer scroll ----------
-const revealTargets = document.querySelectorAll('.section, .hero');
+const revealTargets = document.querySelectorAll('.section');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
     (entries) => {
