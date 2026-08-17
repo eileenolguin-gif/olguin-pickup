@@ -17,9 +17,14 @@
   <title>Olguín Pickup | Transporte privado familiar</title>
   <meta name="description" content="Olguín Pickup — Transporte privado para turistas, personas, mascotas, equipos y mini mudanzas. Agencia familiar chilena, atención directa y de confianza.">
 
+  <meta name="theme-color" content="#ffffff">
+
   <!-- REEMPLAZAR: cuando tengas el logo, agrega aquí un favicon -->
   <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,35 +40,49 @@
         <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
-      <!-- Selector de idioma: ES (principal) / EN / PT -->
-      <div class="lang-switch" role="group" aria-label="Idioma / Language / Idioma">
-        <button type="button" class="lang-switch__btn is-active" data-lang="es">ES</button>
-        <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
-        <button type="button" class="lang-switch__btn" data-lang="pt">PT</button>
-      </div>
+      <div class="navbar__right">
+        <!-- Selector de idioma: ES (principal) / EN / PT -->
+        <div class="lang-switch" role="group" aria-label="Idioma / Language / Idioma">
+          <button type="button" class="lang-switch__btn is-active" data-lang="es">ES</button>
+          <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pt">PT</button>
+        </div>
 
-      <!-- Botón WhatsApp: número y mensaje pre-cargado -->
-      <a class="btn btn--whatsapp navbar__cta js-wa-link"
-         href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
-         target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
-        </svg>
-      </a>
+        <!-- Botón WhatsApp: número y mensaje pre-cargado -->
+        <a class="navbar__wa js-wa-link"
+           href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
+           target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
+          </svg>
+        </a>
+
+        <button type="button" class="navbar__toggle" id="nav-toggle"
+                aria-expanded="false" aria-controls="nav-sheet" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="navbar__sheet" id="nav-sheet" hidden>
+      <a href="#servicios" data-i18n="nav.servicios">Servicios</a>
+      <a href="#por-que" data-i18n="nav.porque">Por qué elegirnos</a>
+      <a href="#posicionamiento" data-i18n="nav.nosotros">Nosotros</a>
+      <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
     </div>
   </header>
 
   <!-- ===================== HERO ===================== -->
   <section id="hero" class="hero">
     <div class="container hero__inner">
-      <p class="hero__eyebrow" data-i18n="hero.eyebrow">Agencia familiar chilena de transporte privado</p>
+      <p class="label hero__eyebrow" data-i18n="hero.eyebrow">Agencia familiar chilena de transporte privado</p>
       <h1 class="hero__title">Olguín Pickup</h1>
       <!-- REEMPLAZAR: ajustar frase de posicionamiento si cambia el enfoque -->
       <p class="hero__subtitle" data-i18n="hero.subtitle">
         Traslados privados con la confianza de una familia y el profesionalismo de un equipo dedicado.
         Personas, mascotas, equipos y mudanzas, siempre en buenas manos.
       </p>
-      <a class="btn btn--whatsapp btn--large js-wa-link"
+      <a class="btn btn--large js-wa-link"
          href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
          target="_blank" rel="noopener">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -72,93 +91,87 @@
         <span data-i18n="hero.cta">Cotiza tu traslado por WhatsApp</span>
       </a>
     </div>
+    <span class="hero__scroll" aria-hidden="true" data-i18n="hero.scroll">Desliza</span>
   </section>
 
   <!-- ===================== QUÉ OFRECEMOS ===================== -->
   <section id="servicios" class="section">
     <div class="container">
-      <h2 class="section__title" data-i18n="services.title">¿Qué ofrecemos?</h2>
-      <p class="section__lead" data-i18n="services.lead">
-        Soluciones de transporte a la medida de cada necesidad, con el mismo nivel de cuidado en cada viaje.
-      </p>
+      <header class="section__head">
+        <div>
+          <p class="label" data-i18n="label.servicios">Servicios</p>
+          <h2 class="section__title" data-i18n="services.title">¿Qué ofrecemos?</h2>
+        </div>
+        <p class="section__lead" data-i18n="services.lead">
+          Soluciones de transporte a la medida de cada necesidad, con el mismo nivel de cuidado en cada viaje.
+        </p>
+      </header>
 
       <div class="grid grid--services">
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="7" width="18" height="13" rx="2.2"/>
-              <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="7" width="18" height="13" rx="2.2"/>
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.turistas.title">Turistas</h3>
           <p class="card__text" data-i18n="service.turistas.text">Traslados privados puntuales y cómodos para quienes visitan nuestra región.</p>
         </div>
 
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16.5 20v-1.8a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.2V20"/>
-              <circle cx="9.8" cy="8.6" r="3.6"/>
-              <path d="M21 20v-1.8a3.6 3.6 0 0 0-2.7-3.5"/>
-              <path d="M14.9 4.2a3.6 3.6 0 0 1 0 6.9"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16.5 20v-1.8a3.6 3.6 0 0 0-3.6-3.6H6.6A3.6 3.6 0 0 0 3 18.2V20"/>
+            <circle cx="9.8" cy="8.6" r="3.6"/>
+            <path d="M21 20v-1.8a3.6 3.6 0 0 0-2.7-3.5"/>
+            <path d="M14.9 4.2a3.6 3.6 0 0 1 0 6.9"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.personas.title">Personas</h3>
           <p class="card__text" data-i18n="service.personas.text">Traslados particulares para el día a día, con atención cercana y directa.</p>
         </div>
 
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
-              <circle cx="12" cy="15.2" r="4"/>
-              <circle cx="5.8" cy="9.2" r="2"/>
-              <circle cx="18.2" cy="9.2" r="2"/>
-              <circle cx="8.7" cy="5" r="1.8"/>
-              <circle cx="15.3" cy="5" r="1.8"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true">
+            <circle cx="12" cy="15.2" r="4"/>
+            <circle cx="5.8" cy="9.2" r="2"/>
+            <circle cx="18.2" cy="9.2" r="2"/>
+            <circle cx="8.7" cy="5" r="1.8"/>
+            <circle cx="15.3" cy="5" r="1.8"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.mascotas.title">Mascotas de gran tamaño</h3>
           <p class="card__text" data-i18n="service.mascotas.text">Transporte seguro y cuidadoso para mascotas grandes, con el respeto que merecen.</p>
         </div>
 
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="6" y1="4" x2="6" y2="20"/>
-              <circle cx="6" cy="10.5" r="2.1"/>
-              <line x1="12" y1="4" x2="12" y2="20"/>
-              <circle cx="12" cy="16" r="2.1"/>
-              <line x1="18" y1="4" x2="18" y2="20"/>
-              <circle cx="18" cy="8" r="2.1"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="6" y1="4" x2="6" y2="20"/>
+            <circle cx="6" cy="10.5" r="2.1"/>
+            <line x1="12" y1="4" x2="12" y2="20"/>
+            <circle cx="12" cy="16" r="2.1"/>
+            <line x1="18" y1="4" x2="18" y2="20"/>
+            <circle cx="18" cy="8" r="2.1"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.eventos.title">Equipos de eventos y producciones</h3>
           <p class="card__text" data-i18n="service.eventos.text">Instrumentos, amplificación y equipamiento técnico para eventos y producciones.</p>
         </div>
 
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="6" cy="17" r="3"/>
-              <circle cx="18" cy="17" r="3"/>
-              <path d="M6 17l3.5-8h4L17 15"/>
-              <path d="M9.5 9h3.2"/>
-              <path d="M13.5 9l3 6"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6" cy="17" r="3"/>
+            <circle cx="18" cy="17" r="3"/>
+            <path d="M6 17l3.5-8h4L17 15"/>
+            <path d="M9.5 9h3.2"/>
+            <path d="M13.5 9l3 6"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.deportivos.title">Equipos deportivos</h3>
           <p class="card__text" data-i18n="service.deportivos.text">Bicicletas, motos, tablas de surf y equipo de escalada, listos para la aventura.</p>
         </div>
 
         <div class="card">
-          <span class="icon-badge" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 8l-9-5-9 5 9 5 9-5z"/>
-              <path d="M3 8v8l9 5 9-5V8"/>
-              <line x1="12" y1="13" x2="12" y2="21"/>
-            </svg>
-          </span>
+          <svg class="card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 8l-9-5-9 5 9 5 9-5z"/>
+            <path d="M3 8v8l9 5 9-5V8"/>
+            <line x1="12" y1="13" x2="12" y2="21"/>
+          </svg>
           <h3 class="card__title" data-i18n="service.mudanzas.title">Mini mudanzas</h3>
           <p class="card__text" data-i18n="service.mudanzas.text">Traslados de menor volumen para cambios de casa u oficina, con orden y cuidado.</p>
         </div>
@@ -169,51 +182,51 @@
   <!-- ===================== POR QUÉ ELEGIRNOS ===================== -->
   <section id="por-que" class="section section--alt">
     <div class="container">
-      <h2 class="section__title" data-i18n="porque.title">¿Por qué elegirnos?</h2>
+      <header class="section__head">
+        <div>
+          <p class="label" data-i18n="label.porque">Diferencia</p>
+          <h2 class="section__title" data-i18n="porque.title">¿Por qué elegirnos?</h2>
+        </div>
+        <p class="section__lead" data-i18n="porque.lead">
+          Cuatro razones concretas por las que nuestros clientes vuelven a llamarnos.
+        </p>
+      </header>
 
       <div class="grid grid--reasons">
         <div class="reason">
-          <span class="icon-badge icon-badge--sm" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4 8.3 8.3 0 0 1-3.8-.9L3 21l1.9-5.7a8.3 8.3 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.5 3a8.5 8.5 0 0 1 8.5 8.5z"/>
-            </svg>
-          </span>
+          <svg class="reason__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.4 8.4 0 0 1-8.4 8.4 8.3 8.3 0 0 1-3.8-.9L3 21l1.9-5.7a8.3 8.3 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.5 3a8.5 8.5 0 0 1 8.5 8.5z"/>
+          </svg>
           <h3 class="reason__title" data-i18n="reason.atencion.title">Atención directa de los dueños</h3>
           <p class="reason__text" data-i18n="reason.atencion.text">Hablas con quienes realmente están a cargo, sin intermediarios.</p>
         </div>
 
         <div class="reason">
-          <span class="icon-badge icon-badge--sm" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 13l1.4-4.8A2 2 0 0 1 6.3 6.8h11.4a2 2 0 0 1 1.9 1.4L21 13"/>
-              <rect x="2" y="13" width="20" height="5" rx="1.6"/>
-              <circle cx="7.2" cy="18.4" r="1.7"/>
-              <circle cx="16.8" cy="18.4" r="1.7"/>
-            </svg>
-          </span>
+          <svg class="reason__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 13l1.4-4.8A2 2 0 0 1 6.3 6.8h11.4a2 2 0 0 1 1.9 1.4L21 13"/>
+            <rect x="2" y="13" width="20" height="5" rx="1.6"/>
+            <circle cx="7.2" cy="18.4" r="1.7"/>
+            <circle cx="16.8" cy="18.4" r="1.7"/>
+          </svg>
           <h3 class="reason__title" data-i18n="reason.vehiculos.title">Vehículos propios</h3>
           <p class="reason__text" data-i18n="reason.vehiculos.text">Flota propia, conducida y mantenida por nosotros mismos.</p>
         </div>
 
         <div class="reason">
-          <span class="icon-badge icon-badge--sm" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2.5l7.5 2.8v6.2c0 4.6-3.2 7.9-7.5 10.1-4.3-2.2-7.5-5.5-7.5-10.1V5.3L12 2.5z"/>
-              <path d="M8.7 12l2.3 2.3 4.3-4.3"/>
-            </svg>
-          </span>
+          <svg class="reason__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2.5l7.5 2.8v6.2c0 4.6-3.2 7.9-7.5 10.1-4.3-2.2-7.5-5.5-7.5-10.1V5.3L12 2.5z"/>
+            <path d="M8.7 12l2.3 2.3 4.3-4.3"/>
+          </svg>
           <h3 class="reason__title" data-i18n="reason.profesionalismo.title">Profesionalismo</h3>
           <p class="reason__text" data-i18n="reason.profesionalismo.text">Puntualidad, orden y responsabilidad en cada traslado.</p>
         </div>
 
         <div class="reason">
-          <span class="icon-badge icon-badge--sm" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3.5 11.2L12 4l8.5 7.2"/>
-              <path d="M5.5 9.8V20h13V9.8"/>
-              <path d="M9.7 20v-5.4h4.6V20"/>
-            </svg>
-          </span>
+          <svg class="reason__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3.5 11.2L12 4l8.5 7.2"/>
+            <path d="M5.5 9.8V20h13V9.8"/>
+            <path d="M9.7 20v-5.4h4.6V20"/>
+          </svg>
           <h3 class="reason__title" data-i18n="reason.confianza.title">Confianza familiar</h3>
           <p class="reason__text" data-i18n="reason.confianza.text">Una agencia familiar chilena que trata cada encargo como propio.</p>
         </div>
@@ -223,16 +236,17 @@
 
   <!-- ===================== POSICIONAMIENTO ===================== -->
   <section id="posicionamiento" class="section section--dark">
-    <div class="container container--narrow">
+    <div class="container container--narrow statement">
+      <p class="label" data-i18n="label.nosotros">Nosotros</p>
       <h2 class="section__title" data-i18n="posicionamiento.title">Una agencia familiar, no un servicio low-cost</h2>
       <!-- REEMPLAZAR: ajustar texto de posicionamiento cuando tengas más detalles -->
-      <p class="section__lead section__lead--light" data-i18n="posicionamiento.text">
+      <p class="statement__text" data-i18n="posicionamiento.text">
         Somos una agencia familiar chilena dedicada al transporte privado, con un alto nivel de atención
         en cada detalle del servicio. No buscamos ser la opción más económica: buscamos ser la opción
         en la que puedas confiar, traslado tras traslado.
       </p>
       <!-- REEMPLAZAR: ajustar cobertura si cambia en el futuro -->
-      <p class="section__lead section__lead--light section__coverage" data-i18n="posicionamiento.coverage">
+      <p class="statement__coverage" data-i18n="posicionamiento.coverage">
         Somos de la Región Metropolitana: hacemos servicios en Santiago y también cubrimos otras regiones,
         según previa coordinación.
       </p>
@@ -241,14 +255,18 @@
 
   <!-- ===================== COMPROMISO ===================== -->
   <section id="compromiso" class="section">
-    <div class="container container--narrow">
-      <h2 class="section__title" data-i18n="compromiso.title">Nuestro compromiso contigo</h2>
-      <p class="section__lead" data-i18n="compromiso.lead">
-        No prometemos ser los más baratos. Prometemos que cada traslado se trata con el mismo cuidado
-        que le daríamos a nuestra propia familia.
-      </p>
-    </div>
-    <div class="container container--narrow">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="label" data-i18n="label.compromiso">Compromiso</p>
+          <h2 class="section__title" data-i18n="compromiso.title">Nuestro compromiso contigo</h2>
+        </div>
+        <p class="section__lead" data-i18n="compromiso.lead">
+          No prometemos ser los más baratos. Prometemos que cada traslado se trata con el mismo cuidado
+          que le daríamos a nuestra propia familia.
+        </p>
+      </header>
+
       <div class="commitment-list">
         <p class="commitment-item">
           <strong data-i18n="compromiso.item1.strong">Puntualidad real.</strong>
@@ -269,29 +287,33 @@
   <!-- ===================== FOTOS DE FONDO ===================== -->
   <!-- REEMPLAZAR: cuando tengas fotos reales de tus propios vehículos, cambia los archivos en images/ -->
   <section id="fotos-fondo" class="bg-photos">
-    <img class="bg-photos__img" src="images/van-blanca-sprinter.jpg" alt="">
-    <img class="bg-photos__img" src="images/auto-blanco.jpg" alt="">
+    <img class="bg-photos__img" src="images/van-blanca-sprinter.jpg" alt="" loading="lazy">
+    <img class="bg-photos__img" src="images/van-negra.jpg" alt="" loading="lazy">
+    <img class="bg-photos__img" src="images/auto-blanco.jpg" alt="" loading="lazy">
   </section>
 
   <!-- ===================== CONTACTO ===================== -->
   <section id="contacto" class="section">
     <div class="container container--narrow contact">
+      <p class="label" data-i18n="label.contacto">Contacto</p>
       <h2 class="section__title" data-i18n="contacto.title">Conversemos tu traslado</h2>
       <p class="section__lead" data-i18n="contacto.lead">
         Escríbenos directamente por WhatsApp y te responderemos a la brevedad para cotizar tu servicio.
       </p>
 
-      <a class="btn--icon-only js-wa-link" href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
-         target="_blank" rel="noopener" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <a class="btn btn--large contact__cta js-wa-link"
+         href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
+         target="_blank" rel="noopener">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
         </svg>
+        <span data-i18n="contacto.cta">Escribir por WhatsApp</span>
       </a>
 
       <div class="contact__extra">
         <!-- REEMPLAZAR: completar con dato real cuando esté disponible -->
-        <p>Correo: <a href="mailto:olguinpickup@gmail.com">olguinpickup@gmail.com</a></p>
-        <p>Instagram: <a href="https://instagram.com/olguin_pickup" target="_blank" rel="noopener">olguin_pickup</a></p>
+        <p><a class="link" href="mailto:olguinpickup@gmail.com">olguinpickup@gmail.com</a></p>
+        <p><a class="link" href="https://instagram.com/olguin_pickup" target="_blank" rel="noopener">@olguin_pickup</a></p>
       </div>
     </div>
   </section>

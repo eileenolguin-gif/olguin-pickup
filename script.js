@@ -11,9 +11,15 @@ const translations = {
     'nav.porque': 'Por qué elegirnos',
     'nav.nosotros': 'Nosotros',
     'nav.contacto': 'Contacto',
+    'label.servicios': 'Servicios',
+    'label.porque': 'Diferencia',
+    'label.nosotros': 'Nosotros',
+    'label.compromiso': 'Compromiso',
+    'label.contacto': 'Contacto',
     'hero.eyebrow': 'Agencia familiar chilena de transporte privado',
     'hero.subtitle': 'Traslados privados con la confianza de una familia y el profesionalismo de un equipo dedicado. Personas, mascotas, equipos y mudanzas, siempre en buenas manos.',
     'hero.cta': 'Cotiza tu traslado por WhatsApp',
+    'hero.scroll': 'Desliza',
     'services.title': '¿Qué ofrecemos?',
     'services.lead': 'Soluciones de transporte a la medida de cada necesidad, con el mismo nivel de cuidado en cada viaje.',
     'service.turistas.title': 'Turistas',
@@ -29,6 +35,7 @@ const translations = {
     'service.mudanzas.title': 'Mini mudanzas',
     'service.mudanzas.text': 'Traslados de menor volumen para cambios de casa u oficina, con orden y cuidado.',
     'porque.title': '¿Por qué elegirnos?',
+    'porque.lead': 'Cuatro razones concretas por las que nuestros clientes vuelven a llamarnos.',
     'reason.atencion.title': 'Atención directa de los dueños',
     'reason.atencion.text': 'Hablas con quienes realmente están a cargo, sin intermediarios.',
     'reason.vehiculos.title': 'Vehículos propios',
@@ -50,6 +57,7 @@ const translations = {
     'compromiso.item3.text': 'Ya sea una persona, una mascota grande o un equipo delicado, lo tratamos como algo que importa, no como un bulto que hay que mover.',
     'contacto.title': 'Conversemos tu traslado',
     'contacto.lead': 'Escríbenos directamente por WhatsApp y te responderemos a la brevedad para cotizar tu servicio.',
+    'contacto.cta': 'Escribir por WhatsApp',
     'footer.tagline': 'Transporte privado familiar',
     waMessage: 'Hola, quiero cotizar un traslado con Olguín Pickup',
   },
@@ -58,9 +66,15 @@ const translations = {
     'nav.porque': 'Why choose us',
     'nav.nosotros': 'About us',
     'nav.contacto': 'Contact',
+    'label.servicios': 'Services',
+    'label.porque': 'Difference',
+    'label.nosotros': 'About us',
+    'label.compromiso': 'Commitment',
+    'label.contacto': 'Contact',
     'hero.eyebrow': 'Chilean family-run private transport agency',
     'hero.subtitle': 'Private transfers with the trust of a family and the professionalism of a dedicated team. People, pets, equipment and moves, always in good hands.',
     'hero.cta': 'Get a quote on WhatsApp',
+    'hero.scroll': 'Scroll',
     'services.title': 'What we offer',
     'services.lead': 'Transport solutions tailored to every need, with the same level of care on every trip.',
     'service.turistas.title': 'Tourists',
@@ -76,6 +90,7 @@ const translations = {
     'service.mudanzas.title': 'Small moves',
     'service.mudanzas.text': 'Smaller-scale moves for home or office relocations, done with care and order.',
     'porque.title': 'Why choose us',
+    'porque.lead': 'Four concrete reasons our clients call us back.',
     'reason.atencion.title': 'Direct attention from the owners',
     'reason.atencion.text': 'You speak directly with the people in charge, no middlemen.',
     'reason.vehiculos.title': 'Our own vehicles',
@@ -97,6 +112,7 @@ const translations = {
     'compromiso.item3.text': "Whether it's a person, a large pet or delicate equipment, we treat it as something that matters, not just a load to move.",
     'contacto.title': "Let's talk about your transfer",
     'contacto.lead': "Message us directly on WhatsApp and we'll get back to you shortly to quote your service.",
+    'contacto.cta': 'Message us on WhatsApp',
     'footer.tagline': 'Family private transport',
     waMessage: "Hi, I'd like to get a quote for a transfer with Olguín Pickup",
   },
@@ -105,9 +121,15 @@ const translations = {
     'nav.porque': 'Por que nos escolher',
     'nav.nosotros': 'Sobre nós',
     'nav.contacto': 'Contato',
+    'label.servicios': 'Serviços',
+    'label.porque': 'Diferença',
+    'label.nosotros': 'Sobre nós',
+    'label.compromiso': 'Compromisso',
+    'label.contacto': 'Contato',
     'hero.eyebrow': 'Agência familiar chilena de transporte privado',
     'hero.subtitle': 'Traslados privados com a confiança de uma família e o profissionalismo de uma equipe dedicada. Pessoas, animais de estimação, equipamentos e mudanças, sempre em boas mãos.',
     'hero.cta': 'Cote seu traslado pelo WhatsApp',
+    'hero.scroll': 'Role',
     'services.title': 'O que oferecemos?',
     'services.lead': 'Soluções de transporte sob medida para cada necessidade, com o mesmo nível de cuidado em cada viagem.',
     'service.turistas.title': 'Turistas',
@@ -123,6 +145,7 @@ const translations = {
     'service.mudanzas.title': 'Pequenas mudanças',
     'service.mudanzas.text': 'Traslados de menor volume para mudanças de casa ou escritório, com ordem e cuidado.',
     'porque.title': 'Por que nos escolher',
+    'porque.lead': 'Quatro motivos concretos pelos quais nossos clientes voltam a nos chamar.',
     'reason.atencion.title': 'Atendimento direto dos donos',
     'reason.atencion.text': 'Você fala diretamente com quem está no comando, sem intermediários.',
     'reason.vehiculos.title': 'Veículos próprios',
@@ -144,6 +167,7 @@ const translations = {
     'compromiso.item3.text': 'Seja uma pessoa, um animal de grande porte ou um equipamento delicado, tratamos como algo que importa, não como um volume a ser transportado.',
     'contacto.title': 'Vamos conversar sobre seu traslado',
     'contacto.lead': 'Fale conosco diretamente pelo WhatsApp e responderemos em breve para cotar seu serviço.',
+    'contacto.cta': 'Falar pelo WhatsApp',
     'footer.tagline': 'Transporte privado familiar',
     waMessage: 'Olá, gostaria de cotar um traslado com a Olguín Pickup',
   },
@@ -179,6 +203,23 @@ langButtons.forEach((btn) => {
 });
 
 setLanguage(localStorage.getItem('op-lang') || 'es');
+
+// ---------- Menú móvil ----------
+const navToggle = document.getElementById('nav-toggle');
+const navSheet = document.getElementById('nav-sheet');
+
+navToggle.addEventListener('click', () => {
+  const open = navToggle.getAttribute('aria-expanded') === 'true';
+  navToggle.setAttribute('aria-expanded', String(!open));
+  navSheet.hidden = open;
+});
+
+navSheet.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A') {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navSheet.hidden = true;
+  }
+});
 
 // ---------- Aparición suave de secciones al hacer scroll ----------
 const revealTargets = document.querySelectorAll('.section');

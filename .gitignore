@@ -1,0 +1,2 @@
+# Configuración local de Claude Code (contiene rutas y URLs firmadas: no publicar)
+.claude/settings.local.json
