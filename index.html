@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
   <!-- El ?v= obliga al navegador a bajar el archivo nuevo en vez de usar el
        que tiene guardado. SUBIR EL NUMERO cada vez que se edite style.css. -->
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -38,8 +38,7 @@
     <div class="container navbar__inner">
       <!-- Isotipo + wordmark. La navbar es un contexto chico: a este tamaño el
            trayecto punteado cae bajo 1 px por punto y se ensucia, así que el
-           sistema usa el pin solo (MARCA.md §2). El trayecto completo vive en
-           el separador entre secciones, donde sí se lee. -->
+           sistema usa el pin solo (MARCA.md §2). -->
       <a href="#hero" class="navbar__brand brand" aria-label="Olguín Pickup — ir al inicio">
         <svg class="brand__pin" viewBox="87.6 4.5 18.8 24.5" aria-hidden="true">
           <path fill-rule="evenodd" fill="currentColor" d="M97 4.5c-5.2 0-9.4 4.2-9.4 9.4 0 7 9.4 15.1 9.4 15.1s9.4-8.1 9.4-15.1c0-5.2-4.2-9.4-9.4-9.4zm0 5.7a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z"/>
@@ -297,21 +296,10 @@
     </div>
   </section>
 
-  <!-- ===================== SEPARADOR DE TRAYECTO ===================== -->
-  <!-- Recurso gráfico de marca (MARCA.md §3 y §8.4): el trayecto cruza la
-       página y desemboca en el CTA final. -->
-  <div class="container">
-    <div class="trail" aria-hidden="true">
-      <span class="trail__dot"></span>
-      <span class="trail__line"></span>
-      <svg class="trail__pin" viewBox="87.6 4.5 18.8 24.5">
-        <path fill-rule="evenodd" fill="currentColor" d="M97 4.5c-5.2 0-9.4 4.2-9.4 9.4 0 7 9.4 15.1 9.4 15.1s9.4-8.1 9.4-15.1c0-5.2-4.2-9.4-9.4-9.4zm0 5.7a3.8 3.8 0 1 1 0 7.6 3.8 3.8 0 0 1 0-7.6z"/>
-      </svg>
-    </div>
-  </div>
-
   <!-- ===================== CONTACTO ===================== -->
-  <section id="contacto" class="section">
+  <!-- Fondo gris suave: separa Contacto del Compromiso (que es blanco) y cierra
+       la página bajando blanco -> gris -> negro del footer. -->
+  <section id="contacto" class="section section--alt">
     <div class="container container--narrow contact">
       <p class="label" data-i18n="label.contacto">Contacto</p>
       <h2 class="section__title" data-i18n="contacto.title">Conversemos tu traslado</h2>
@@ -353,6 +341,6 @@
   </footer>
 
   <!-- Mismo criterio que style.css: subir el ?v= al editar este archivo. -->
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
