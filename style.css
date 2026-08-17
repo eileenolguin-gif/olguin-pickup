@@ -434,6 +434,31 @@ a {
   line-height: 1.5;
 }
 
+/* ---------- Compromiso ---------- */
+
+.commitment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.commitment-item {
+  padding: 26px 0;
+  border-top: 1px solid var(--color-border);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+}
+
+.commitment-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.commitment-item strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* ---------- Fotos de fondo (decorativas, translúcidas) ---------- */
 
 .bg-photos {
