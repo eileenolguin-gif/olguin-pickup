@@ -750,38 +750,6 @@ section[id] {
   letter-spacing: -0.01em;
 }
 
-/* ---------- Banda de fotos a sangre ---------- */
-
-/* Las tres fotos vienen de contextos distintos: el desaturado fuerte
-   y el velo oscuro las unifican en una sola banda atmosférica. */
-.bg-photos {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: clamp(200px, 26vw, 340px);
-  background: var(--dark);
-}
-
-.bg-photos::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 12, 11, 0.5) 0%,
-    rgba(8, 12, 11, 0.34) 45%,
-    rgba(8, 12, 11, 0.62) 100%
-  );
-}
-
-.bg-photos__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(88%) contrast(1.06) brightness(0.94);
-}
-
 /* ---------- Contacto ---------- */
 
 .contact {
