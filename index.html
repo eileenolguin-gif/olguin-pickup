@@ -12,6 +12,25 @@
     gtag('config', 'AW-18395064101');
   </script>
 
+  <!-- Event snippet for Solicitar cotización conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18395064101/UYPoCPehyeUcEKXOucNE',
+        'value': 1.0,
+        'currency': 'CLP',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olguín Pickup | Transporte privado familiar</title>
@@ -29,7 +48,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
   <!-- El ?v= obliga al navegador a bajar el archivo nuevo en vez de usar el
        que tiene guardado. SUBIR EL NUMERO cada vez que se edite style.css. -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -61,8 +80,11 @@
         </div>
 
         <!-- Botón WhatsApp: número y mensaje pre-cargado -->
+        <!-- Conversión 1 de 3. Se llama sin URL y sin "return": el enlace abre
+             WhatsApp solo, en pestaña nueva, como siempre. Ver nota en script.js -->
         <a class="navbar__wa js-wa-link"
            href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
+           onclick="gtag_report_conversion()"
            target="_blank" rel="noopener" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
@@ -94,8 +116,10 @@
         Traslados privados con la confianza de una familia y el profesionalismo de un equipo dedicado.
         Personas, mascotas, equipos y mudanzas, siempre en buenas manos.
       </p>
+      <!-- Conversión 2 de 3 -->
       <a class="btn btn--large js-wa-link"
          href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
+         onclick="gtag_report_conversion()"
          target="_blank" rel="noopener">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
@@ -307,8 +331,10 @@
         Escríbenos directamente por WhatsApp y te responderemos a la brevedad para cotizar tu servicio.
       </p>
 
+      <!-- Conversión 3 de 3 -->
       <a class="btn btn--large contact__cta js-wa-link"
          href="https://wa.me/56973873915?text=Hola%2C%20quiero%20cotizar%20un%20traslado%20con%20Olgu%C3%ADn%20Pickup"
+         onclick="gtag_report_conversion()"
          target="_blank" rel="noopener">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9 0-1.4.7-2 .9-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .5.4.2.5.7 1.7.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.5-.1.2-.3.4-.4.5-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.5 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.8.8.3.1.5.2.5.3.1.2.1.6-.1 1.3z"/>
@@ -341,6 +367,6 @@
   </footer>
 
   <!-- Mismo criterio que style.css: subir el ?v= al editar este archivo. -->
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

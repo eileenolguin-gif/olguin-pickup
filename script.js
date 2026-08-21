@@ -186,6 +186,10 @@ function setLanguage(lang) {
     if (dict[key]) el.textContent = dict[key];
   });
 
+  // Ojo con el seguimiento de conversión de Google Ads: el href de estos
+  // enlaces cambia con el idioma, así que en index.html el onclick llama a
+  // gtag_report_conversion() SIN pasarle la URL. Si se le pasara, quedaría
+  // congelada en español y mandaría a WhatsApp con el mensaje equivocado.
   waLinks.forEach((link) => {
     link.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(dict.waMessage)}`;
   });
